@@ -2,10 +2,15 @@ pub struct SimpleTokenizer;
 
 impl SimpleTokenizer {
     pub fn tokenize(text: &str) -> Vec<String> {
-        text
-            .to_lowercase()
+        text.to_lowercase()
             .chars()
-            .map(|c| if c.is_alphanumeric() || c.is_whitespace() { c } else { ' ' })
+            .map(|c| {
+                if c.is_alphanumeric() || c.is_whitespace() {
+                    c
+                } else {
+                    ' '
+                }
+            })
             .collect::<String>()
             .split_whitespace()
             .map(|t| t.to_string())

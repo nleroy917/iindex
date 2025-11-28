@@ -1,2 +1,2 @@
-pub mod tokenizer;
 pub mod iindex;
+pub mod tokenizer;
